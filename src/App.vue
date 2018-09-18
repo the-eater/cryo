@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <FlowView :workflow="workflow"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import FlowView from "./components/FlowView";
+import Workflow from "./api/Workflow";
 
 export default {
   name: "app",
+  data: () => ({
+    workflow: new Workflow()
+  }),
   components: {
-    HelloWorld
+    FlowView
   }
 };
 </script>
